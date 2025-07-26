@@ -36,9 +36,9 @@ namespace Inventory_WebAPI.Controllers
                 return Ok();
  
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.InnerException.Message);
             }
  
         }
@@ -61,9 +61,9 @@ namespace Inventory_WebAPI.Controllers
  
                 return Ok();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.InnerException.Message);
  
             }
  
